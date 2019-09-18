@@ -77,7 +77,7 @@ class App extends Component {
         </header>
         <main>
           <ControlPanel replace={this.replace} activeWord={this.state.activeWord} activeWordText={this.state.activeWord ? this.state.words[this.state.activeWord].word : null} makeBold={this.makeBold} makeItalic={this.makeItalic} makeUnderlined={this.makeUnderlined} word={this.state.words[this.state.activeWord]}/>
-          <FileZone text={text} />
+          <FileZone text={text} addWord={this.addWord} />
         </main>
       </div>
     );

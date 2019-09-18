@@ -20,3 +20,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.file .input {
+  width: 611px;
+  max-height: 200px;
+  margin: 0px;
+  height: 94px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+}
