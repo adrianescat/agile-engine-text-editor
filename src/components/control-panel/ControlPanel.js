@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../styles/ControlPanel.css';
 
+import ColorPicker from './ColorPicker';
+
 class ControlPanel extends Component {
   constructor(props) {
     super(props)
@@ -8,6 +10,7 @@ class ControlPanel extends Component {
       replacement: [],
       word: '',
       synonyms: [],
+      colorPickerVisisble: false,
     }
   }
 
@@ -30,6 +33,7 @@ class ControlPanel extends Component {
       })
       .catch(function (error) {
         console.log(error);
+        this.setState({ synonyms: [] });
       });
   }
 
@@ -52,6 +56,11 @@ class ControlPanel extends Component {
           <button className={`format-action ${activeWordInfo && activeWordInfo.underlined ? 'active' : ''}`} type="button" onClick={e => this.props.makeUnderlined(this.props.activeWord)}>
             <u>U</u>
           </button>
+          <button className={`format-action color ${activeWordInfo && activeWordInfo.underlined ? 'active' : ''}`} type="button" onClick={() => this.setState({colorPickerVisisble: !this.state.colorPickerVisisble})}>
+            <u>Color</u>
+          </button>
+
+          {this.state.colorPickerVisisble && <ColorPicker activeWord={this.props.activeWord} changeColor={this.props.changeColor}/>}
         </div>
         {this.state.synonyms.length > 0 && <div className="synonyms">
           <div className="label">Synonyms. Select to replace:</div>

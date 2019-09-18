@@ -19,6 +19,7 @@
 .predefined-text {
   display: flex;
   flex-wrap: wrap;
+  color: #333;
 }
 
 .file .input {

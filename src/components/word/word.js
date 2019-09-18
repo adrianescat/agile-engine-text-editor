@@ -10,7 +10,7 @@ class Word extends Component {
     const activeC = active ? 'active' : '';
 
     return (
-      <span id={index} onClick={e => this.props.setActiveWord()} className={`word ${boldC} ${underC} ${itallC} ${activeC}`}>
+      <span style={{color: this.props.color}} id={index} onClick={e => this.props.setActiveWord()} className={`word ${boldC} ${underC} ${itallC} ${activeC}`}>
         {word}
       </span>
     )

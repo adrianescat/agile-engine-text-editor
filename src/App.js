@@ -39,6 +39,14 @@ class App extends Component {
     this.setState({ words: words });
   }
 
+  changeColor = (color, wordId) => {
+    if (!(wordId > 0)) return false;
+    const words = this.state.words;
+    const wordToFormat = { ...words[wordId], color: color }
+    words[wordId] = wordToFormat;
+    this.setState({ words: words });
+  }
+
   addWord = (word) => {
     this.setState((state, props) => {
       return { words: [...state.words, { word: word, bold: false, itallic: false, underlined: false }] }
@@ -58,7 +66,7 @@ class App extends Component {
     getMockText().then((result) => {
       const wordsArray = result.split(' ');
 
-      const words = wordsArray.map(word => ({word: word, bold: false, underlined: false, itallic: false}));
+      const words = wordsArray.map(word => ({word: word, bold: false, underlined: false, itallic: false, color: '#333'}));
       this.setState({ words: words });
     });
   }
@@ -76,7 +84,7 @@ class App extends Component {
           <span>Best Text Editor</span>
         </header>
         <main>
-          <ControlPanel replace={this.replace} activeWord={this.state.activeWord} activeWordText={this.state.activeWord ? this.state.words[this.state.activeWord].word : null} makeBold={this.makeBold} makeItalic={this.makeItalic} makeUnderlined={this.makeUnderlined} word={this.state.words[this.state.activeWord]}/>
+          <ControlPanel replace={this.replace} activeWord={this.state.activeWord} activeWordText={this.state.activeWord ? this.state.words[this.state.activeWord].word : null} makeBold={this.makeBold} makeItalic={this.makeItalic} makeUnderlined={this.makeUnderlined} word={this.state.words[this.state.activeWord]} changeColor={this.changeColor}/>
           <FileZone text={text} addWord={this.addWord} />
         </main>
       </div>

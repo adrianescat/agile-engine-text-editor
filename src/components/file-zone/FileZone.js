@@ -33,7 +33,7 @@ class FileZone extends Component {
           <p className="predefined-text">
             { text }
           </p>
-          <textarea class="input" value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleSubmit} />
+          <textarea className="input" value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleSubmit} />
         </div>
       </div>
     );

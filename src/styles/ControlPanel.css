@@ -10,8 +10,11 @@
 }
 
 #format-actions {
-  width: 200px;
   margin-right: 400px;
+  width: 500px;
+  margin-right: 400px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .format-action {
@@ -22,6 +25,9 @@
   border-radius: 3px;
   margin-right: 10px;
   font-size: 16px;
+}
+.format-action.color {
+  width: 60px;
 }
 
 .format-action.active {
@@ -50,4 +56,18 @@
 
 .synonyms .syn {
   margin-bottom: 5px;
+}
+
+.color-picker {
+  position: absolute;
+  background: white;
+  border: 1px solid #333;
+  border-radius: 3px;
+  right: 30%;
+}
+
+.color-picker .reset {
+  position: relative;
+  top: -9px;
+  right: 15px;
 }
