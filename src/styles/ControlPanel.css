@@ -1,12 +1,53 @@
-#control-panel {
-    background-color: #fff;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 5px;
+.control-panel {
+  background-color: #fff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+  position: relative;
 }
+
 #format-actions {
-    width: 200px;
-    margin-right: 400px;
+  width: 200px;
+  margin-right: 400px;
+}
+
+.format-action {
+  width: 38px;
+  height: 27px;
+  background-color: white;
+  outline: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.format-action.active {
+  background: #bef0ff;
+}
+
+.synonyms{
+  position: absolute;
+  right: 10%;
+  top: 64px;
+  min-width: 215px;
+}
+
+.synonyms .label {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.synonyms .box {
+  background: white;
+  padding: 11px;
+  box-shadow: 0px 4px 9px 1px rgba(179,179,179,1);
+  max-height: 553px;
+  overflow-y: scroll;
+}
+
+.synonyms .syn {
+  margin-bottom: 5px;
 }

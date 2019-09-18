@@ -1,15 +1,22 @@
-#file-zone {
-    background-color:#f1f0f0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
+.file-zone {
+  background-color:#f1f0f0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  min-height: 600px;
 }
 
-#file {
-    width: 600px;
-    flex-grow: 1;
-    background-color: #fff;
-    border: 1px solid #e4dede;
+.file {
+  width: 600px;
+  flex-grow: 1;
+  background-color: #fff;
+  border: 1px solid #e4dede;
+  padding: 24px;
+}
+
+.predefined-text {
+  display: flex;
+  flex-wrap: wrap;
 }
