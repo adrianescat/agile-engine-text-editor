@@ -25,7 +25,7 @@ class ControlPanel extends Component {
       .then(res => res.clone().json())
       .then((res) => {
         const listOfSynonyms = [];
-        res.map((value) => {
+        res.forEach(value => {
           listOfSynonyms.push(value.word);
         });
 
@@ -56,8 +56,8 @@ class ControlPanel extends Component {
           <button className={`format-action ${activeWordInfo && activeWordInfo.underlined ? 'active' : ''}`} type="button" onClick={e => this.props.makeUnderlined(this.props.activeWord)}>
             <u>U</u>
           </button>
-          <button className={`format-action color ${activeWordInfo && activeWordInfo.underlined ? 'active' : ''}`} type="button" onClick={() => this.setState({colorPickerVisisble: !this.state.colorPickerVisisble})}>
-            <u>Color</u>
+          <button className={`format-action color ${activeWordInfo && activeWordInfo.color !== '#333' ? 'active' : ''}`} type="button" onClick={() => this.setState({colorPickerVisisble: !this.state.colorPickerVisisble})}>
+            Color
           </button>
 
           {this.state.colorPickerVisisble && <ColorPicker activeWord={this.props.activeWord} changeColor={this.props.changeColor}/>}

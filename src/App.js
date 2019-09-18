@@ -49,7 +49,7 @@ class App extends Component {
 
   addWord = (word) => {
     this.setState((state, props) => {
-      return { words: [...state.words, { word: word, bold: false, itallic: false, underlined: false }] }
+      return { words: [...state.words, { word: word, bold: false, itallic: false, underlined: false, color: '#333' }] }
     })
   }
 
